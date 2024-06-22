@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_cloud
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_rain
+drawable ic_snow
+drawable ic_sun
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme._1_Task_Pogoda_Compose
+xml backup_rules
+xml data_extraction_rules
