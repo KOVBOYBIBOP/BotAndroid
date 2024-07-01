@@ -1,98 +1,82 @@
 [
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_snow.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_snow.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_sun.png.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_sun.png"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_snow.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_snow.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_rain.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_rain.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/xml_backup_rules.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_sun.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_sun.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_cloud.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_cloud.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_rain.png.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_rain.png"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_sun.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_sun.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_cloud.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_cloud.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_snow.png.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_snow.png"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/xml_backup_rules.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/xml/backup_rules.xml"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_rain.webp.flat",
-        "source": "com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_rain.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/drawable_ic_cloud.png.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/drawable/ic_cloud.png"
-    },
-    {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-hdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-debug-45:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/daniil/.gradle/daemon/8.4/com.example.a1_task_pogoda_compose.app-main-47:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.a1_task_pogoda_compose.app-debug-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.a1_task_pogoda_compose.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
     }
 ]
