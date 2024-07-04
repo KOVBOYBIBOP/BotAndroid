@@ -6,7 +6,6 @@ import com.example.a1_task_pogoda_compose.ui.data.WeatherResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import android.util.Log
-
 suspend fun retrofitRequests(apiKey: String, location: String, baseUrl: String): List<ForecastDay> {
     val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)

@@ -4,20 +4,13 @@ ADDED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogod
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml:2:1-28:12
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml:2:1-28:12
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [com.google.accompanist:accompanist-swiperefresh:0.23.0] /home/daniil/.gradle/caches/transforms-3/aac5d0a509672008ee38f783ecfde58e/transformed/accompanist-swiperefresh-0.23.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-compose:2.5.0] /home/daniil/.gradle/caches/transforms-3/4af730dd62831d5da086c31a6103ec05/transformed/navigation-compose-2.5.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.material3:material3:1.1.1] /home/daniil/.gradle/caches/transforms-3/087811eb651ce90308ee087b423b0af0/transformed/material3-1.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [io.coil-kt:coil-compose:1.4.0] /home/daniil/.gradle/caches/transforms-3/16cc7c549903b3e676a1d2d6fc0c67ee/transformed/coil-compose-1.4.0/AndroidManifest.xml:2:1-9:12
 MERGED from [io.coil-kt:coil-compose-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/a08c4ddec4e6560fbc6c80f8c9622a97/transformed/coil-compose-base-1.4.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:17:1-24:12
-MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:2:1-9:12
-MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/5fae1a6403226e5df722288a7fee705e/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/c9eadce6886b451942d6574b0b77a3c9/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/cee2c0e1bfb8a0cbd191dc1e74a0ef92/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.foundation:foundation-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/a44e516c0ae8f175efa65ae19b5199a5/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
@@ -30,12 +23,21 @@ MERGED from [androidx.compose.ui:ui-text-android:1.6.0] /home/daniil/.gradle/cac
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/3e87b9f565703c4229caa22bf2fbf7ce/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-geometry-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/5c367ba0616aab2c879836f664b368f2/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2597bca0a84aa8fbeed10056886f3cf1/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/daniil/.gradle/caches/transforms-3/6641b9d0c3aee21816ae0f42f8122a9e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /home/daniil/.gradle/caches/transforms-3/a8259452ae92eb59405eed697a97bc22/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/daniil/.gradle/caches/transforms-3/6665f97ee09061a3418749bbb1464c99/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.2] /home/daniil/.gradle/caches/transforms-3/c1ed9e5b8dec4cbc653d3e151b7f6802/transformed/lifecycle-process-2.8.2/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] /home/daniil/.gradle/caches/transforms-3/2c0d314ebdd5d2976fdcd6ec7fd62006/transformed/lifecycle-livedata-core-2.8.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/e764f31392ab0ea105372baacdf9a46a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/7071b01ddaf112f2de82dcd5dd0085df/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] /home/daniil/.gradle/caches/transforms-3/57555f69e75b38627317995c9cdea99f/transformed/lifecycle-viewmodel-savedstate-2.8.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/daniil/.gradle/caches/transforms-3/46649803c1d3e3df89396620d2e82bf8/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.13.1] /home/daniil/.gradle/caches/transforms-3/b33d36d52776ed81bedacb8367e1f8aa/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
@@ -53,8 +55,8 @@ MERGED from [androidx.activity:activity:1.9.0] /home/daniil/.gradle/caches/trans
 MERGED from [androidx.activity:activity-compose:1.9.0] /home/daniil/.gradle/caches/transforms-3/c2779cd0e7f0664505cdb15edcda700b/transformed/activity-compose-1.9.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity-ktx:1.9.0] /home/daniil/.gradle/caches/transforms-3/5db65e4824c4c32f486b005c59400377/transformed/activity-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/b01d4a81e5134db4d3207f8702bcf03f/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/1ca7183f3300e89f39afe88e228871fa/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.runtime:runtime-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2bf608f3c420b4067b4f4e299d80b384/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/7630e68fb694e587932ee20c108c5b51/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/9cc910275be518d88b190ae509f2d711/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/daniil/.gradle/caches/transforms-3/3641256c335f6e4716c4e2e8d84307cc/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/daniil/.gradle/caches/transforms-3/14213396c9571a9ae8e3e9192c1cc57f/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/daniil/.gradle/caches/transforms-3/deadcfe769d2e14f6fa81bf1460c055b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
@@ -142,6 +144,8 @@ uses-sdk
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml
 INJECTED from /home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/src/main/AndroidManifest.xml
+MERGED from [com.google.accompanist:accompanist-swiperefresh:0.23.0] /home/daniil/.gradle/caches/transforms-3/aac5d0a509672008ee38f783ecfde58e/transformed/accompanist-swiperefresh-0.23.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.accompanist:accompanist-swiperefresh:0.23.0] /home/daniil/.gradle/caches/transforms-3/aac5d0a509672008ee38f783ecfde58e/transformed/accompanist-swiperefresh-0.23.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-compose:2.5.0] /home/daniil/.gradle/caches/transforms-3/4af730dd62831d5da086c31a6103ec05/transformed/navigation-compose-2.5.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-compose:2.5.0] /home/daniil/.gradle/caches/transforms-3/4af730dd62831d5da086c31a6103ec05/transformed/navigation-compose-2.5.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.compose.material3:material3:1.1.1] /home/daniil/.gradle/caches/transforms-3/087811eb651ce90308ee087b423b0af0/transformed/material3-1.1.1/AndroidManifest.xml:20:5-44
@@ -150,26 +154,10 @@ MERGED from [io.coil-kt:coil-compose:1.4.0] /home/daniil/.gradle/caches/transfor
 MERGED from [io.coil-kt:coil-compose:1.4.0] /home/daniil/.gradle/caches/transforms-3/16cc7c549903b3e676a1d2d6fc0c67ee/transformed/coil-compose-1.4.0/AndroidManifest.xml:5:5-7:41
 MERGED from [io.coil-kt:coil-compose-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/a08c4ddec4e6560fbc6c80f8c9622a97/transformed/coil-compose-base-1.4.0/AndroidManifest.xml:5:5-7:41
 MERGED from [io.coil-kt:coil-compose-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/a08c4ddec4e6560fbc6c80f8c9622a97/transformed/coil-compose-base-1.4.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:5:5-7:41
-MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:5:5-7:41
-MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:5:5-7:41
-MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/5fae1a6403226e5df722288a7fee705e/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/5fae1a6403226e5df722288a7fee705e/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/db83a1ae77b765281098283de44b9862/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/c9eadce6886b451942d6574b0b77a3c9/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/c9eadce6886b451942d6574b0b77a3c9/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/cee2c0e1bfb8a0cbd191dc1e74a0ef92/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
@@ -194,6 +182,22 @@ MERGED from [androidx.compose.ui:ui-geometry-android:1.6.0] /home/daniil/.gradle
 MERGED from [androidx.compose.ui:ui-geometry-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/5c367ba0616aab2c879836f664b368f2/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2597bca0a84aa8fbeed10056886f3cf1/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2597bca0a84aa8fbeed10056886f3cf1/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.5.0] /home/daniil/.gradle/caches/transforms-3/27517ed5a0ad14338243019a23fc912d/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.19.0] /home/daniil/.gradle/caches/transforms-3/0aae5a58f3169a73e9fefaf11c5d41f4/transformed/accompanist-drawablepainter-0.19.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/c37ec7c8689d59345a8f04756cbe02f8/transformed/navigation-runtime-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] /home/daniil/.gradle/caches/transforms-3/9180162810e903dea65687befc9cbb33/transformed/navigation-runtime-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:1.4.0] /home/daniil/.gradle/caches/transforms-3/9fb38e2bb181b9605ec758401895a86f/transformed/coil-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil-base:1.4.0] /home/daniil/.gradle/caches/transforms-3/254801eef8e26031a029df9f07a80af5/transformed/coil-base-1.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] /home/daniil/.gradle/caches/transforms-3/e0a052428a9dc7225df1610e24a932f4/transformed/navigation-common-ktx-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.0] /home/daniil/.gradle/caches/transforms-3/040fce03d0e8825786b6c42771b8de49/transformed/navigation-common-2.5.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/daniil/.gradle/caches/transforms-3/6641b9d0c3aee21816ae0f42f8122a9e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/daniil/.gradle/caches/transforms-3/6641b9d0c3aee21816ae0f42f8122a9e/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /home/daniil/.gradle/caches/transforms-3/a8259452ae92eb59405eed697a97bc22/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
@@ -206,6 +210,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] /home/daniil/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.2] /home/daniil/.gradle/caches/transforms-3/2c0d314ebdd5d2976fdcd6ec7fd62006/transformed/lifecycle-livedata-core-2.8.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/e764f31392ab0ea105372baacdf9a46a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/e764f31392ab0ea105372baacdf9a46a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/7071b01ddaf112f2de82dcd5dd0085df/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/7071b01ddaf112f2de82dcd5dd0085df/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] /home/daniil/.gradle/caches/transforms-3/57555f69e75b38627317995c9cdea99f/transformed/lifecycle-viewmodel-savedstate-2.8.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.2] /home/daniil/.gradle/caches/transforms-3/57555f69e75b38627317995c9cdea99f/transformed/lifecycle-viewmodel-savedstate-2.8.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/daniil/.gradle/caches/transforms-3/46649803c1d3e3df89396620d2e82bf8/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
@@ -240,10 +246,10 @@ MERGED from [androidx.activity:activity-ktx:1.9.0] /home/daniil/.gradle/caches/t
 MERGED from [androidx.activity:activity-ktx:1.9.0] /home/daniil/.gradle/caches/transforms-3/5db65e4824c4c32f486b005c59400377/transformed/activity-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/b01d4a81e5134db4d3207f8702bcf03f/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.2] /home/daniil/.gradle/caches/transforms-3/b01d4a81e5134db4d3207f8702bcf03f/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/1ca7183f3300e89f39afe88e228871fa/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/1ca7183f3300e89f39afe88e228871fa/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.runtime:runtime-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2bf608f3c420b4067b4f4e299d80b384/transformed/runtime-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.runtime:runtime-android:1.6.0] /home/daniil/.gradle/caches/transforms-3/2bf608f3c420b4067b4f4e299d80b384/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/7630e68fb694e587932ee20c108c5b51/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/7630e68fb694e587932ee20c108c5b51/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/9cc910275be518d88b190ae509f2d711/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.5] /home/daniil/.gradle/caches/transforms-3/9cc910275be518d88b190ae509f2d711/transformed/runtime-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/daniil/.gradle/caches/transforms-3/3641256c335f6e4716c4e2e8d84307cc/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/daniil/.gradle/caches/transforms-3/3641256c335f6e4716c4e2e8d84307cc/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/daniil/.gradle/caches/transforms-3/14213396c9571a9ae8e3e9192c1cc57f/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44

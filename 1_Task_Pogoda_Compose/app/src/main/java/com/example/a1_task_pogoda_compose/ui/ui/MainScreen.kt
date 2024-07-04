@@ -1,26 +1,52 @@
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
+package com.example.a1_task_pogoda_compose
+
+import WeatherViewModel
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.gestures.detectVerticalDragGestures
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.TextFieldValue
@@ -31,127 +57,150 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.a1_task_pogoda_compose.ui.data.ForecastDay
 import com.example.a1_task_pogoda_compose.ui.theme.Typography
-import com.example.a1_task_pogoda_compose.ui.ui.WeatherViewModel
+import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.TextStyle
+import java.util.Locale
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MainScreen()
-        }
-    }
-}
-
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MainScreen() {
     val weatherViewModel: WeatherViewModel = viewModel()
     val weatherDataState by weatherViewModel.weatherData.collectAsState()
     val weatherData = weatherDataState
-    val showMenu = remember { mutableStateOf(false) }
+    val switcherState = remember { mutableStateOf(false) }
     val showDialog = remember { mutableStateOf(false) }
     val showError = remember { mutableStateOf(false) }
     val errorMessage = remember { mutableStateOf("") }
     val isLoading = remember { mutableStateOf(true) }
     val temperatureType = remember { mutableStateOf("C") }
+    val isRefreshing = remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
 
-    isLoading.value = weatherData.isEmpty()
+    LaunchedEffect(weatherData) {
+        isLoading.value = weatherData.isEmpty()
+    }
 
-    val backgroundColor by animateColorAsState(
-        targetValue = if (!isLoading.value) {
-            getBackgroundColor(weatherData[0].day.condition.text)
-        } else {
-            Color.White
-        },
-        animationSpec = tween(durationMillis = 1000)
-    )
+    // Используем remember для сохранения backgroundColor
+    val backgroundColor by weatherViewModel.backgroundColor.collectAsState()
 
-    AnimatedVisibility(
-        visible = !isLoading.value,
-        enter = fadeIn(animationSpec = tween(1000)),
-        exit = fadeOut(animationSpec = tween(1000))
+    val location = weatherViewModel.location
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .systemBarsPadding()
+            .background(backgroundColor)
+            .pointerInput(Unit) {
+                detectVerticalDragGestures(
+                    onVerticalDrag = { _, _ -> },
+                    onDragEnd = {
+                        if (!isRefreshing.value) {
+                            isRefreshing.value = true
+                            scope.launch {
+                                weatherViewModel.updateLocation(weatherViewModel.location) { error ->
+                                    showError.value = true
+                                    errorMessage.value = error
+                                }
+                                isRefreshing.value = false
+                            }
+                        }
+                    }
+                )
+            },
+        contentAlignment = Alignment.Center
     ) {
-        val location = weatherViewModel.location
-
         Scaffold(
             modifier = Modifier
                 .fillMaxSize()
-                .systemBarsPadding()
-                .background(backgroundColor),
-            topBar = { MainTopBar(location, showDialog, showMenu, temperatureType) },
+                .background(Color.Transparent),
+            topBar = { MainTopBar(location, showDialog, switcherState, temperatureType) },
             containerColor = Color.Transparent
         ) { paddingValues ->
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-                    .background(Color.Transparent)
-            ) {
-                CurrentTemperature(
-                    if (temperatureType.value == "C") weatherData[0].day.avgtemp_c else weatherData[0].day.avgtemp_f,
-                    weatherData[0].day.condition.text,
-                    modifier = Modifier
-                        .weight(1f)
-                        .background(Color.Transparent)
-                )
+            if (isLoading.value) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(text = "Loading ...")
+                }
+            } else {
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                        .padding(horizontal = 16.dp, vertical = 16.dp)
+                        .fillMaxSize()
+                        .padding(paddingValues)
                         .background(Color.Transparent)
                 ) {
+                    CurrentTemperature(
+                        mainTypeTemperature(weatherData[0], temperatureType),
+                        weatherData[0].day.condition.text,
+                        modifier = Modifier
+                            .weight(1f)
+                            .background(Color.Transparent)
+                    )
                     Box(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .background(
-                                color = Color.Gray.copy(alpha = 0.5f),
-                                shape = RoundedCornerShape(16.dp)
-                            )
-                            .padding(16.dp)
+                            .fillMaxWidth()
+                            .weight(1f)
+                            .padding(horizontal = 16.dp, vertical = 16.dp)
+                            .background(Color.Transparent)
                     ) {
                         LazyColumn(
                             modifier = Modifier.fillMaxSize()
                         ) {
                             items(weatherData) { forecastDay ->
-                                WeatherDayItem(forecastDay)
+                                WeatherDayItem(forecastDay, temperatureType)
                             }
                         }
                     }
                 }
             }
         }
-    }
 
-    AnimatedVisibility(
-        visible = showDialog.value,
-        enter = fadeIn(animationSpec = tween(500)),
-        exit = fadeOut(animationSpec = tween(500))
-    ) {
-        CityInputDialog(
-            onDismiss = { showDialog.value = false },
-            onSubmit = { newCity ->
-                weatherViewModel.updateLocation(newCity) { error ->
-                    showError.value = true
-                    errorMessage.value = error
+        AnimatedVisibility(
+            visible = isRefreshing.value,
+            enter = fadeIn(animationSpec = tween(500)),
+            exit = fadeOut(animationSpec = tween(500))
+        ) {
+            CircularProgressIndicator(
+                modifier = Modifier.size(50.dp)
+            )
+        }
+
+        AnimatedVisibility(
+            visible = showDialog.value,
+            enter = fadeIn(animationSpec = tween(500)),
+            exit = fadeOut(animationSpec = tween(500))
+        ) {
+            CityInputDialog(
+                onDismiss = { showDialog.value = false },
+                onSubmit = { newCity ->
+                    weatherViewModel.updateLocation(newCity) { error ->
+                        showError.value = true
+                        errorMessage.value = error
+                    }
+                    showDialog.value = false
                 }
-                showDialog.value = false
-            }
-        )
-    }
+            )
+        }
 
-    AnimatedVisibility(
-        visible = showError.value,
-        enter = fadeIn(animationSpec = tween(500)),
-        exit = fadeOut(animationSpec = tween(500))
-    ) {
-        ErrorDialog(
-            message = errorMessage.value,
-            onDismiss = { showError.value = false }
-        )
+        AnimatedVisibility(
+            visible = showError.value,
+            enter = fadeIn(animationSpec = tween(500)),
+            exit = fadeOut(animationSpec = tween(500))
+        ) {
+            ErrorDialog(
+                message = errorMessage.value,
+                onDismiss = { showError.value = false }
+            )
+        }
     }
 }
 
-@Composable
+
+
+
 fun getBackgroundColor(description: String): Color {
     return when {
         "rain" in description.lowercase() -> Color.Blue
@@ -162,8 +211,25 @@ fun getBackgroundColor(description: String): Color {
     }
 }
 
+fun mainTypeTemperature(weatherDayData: ForecastDay, temperatureType: MutableState<String>): Double {
+    return if (temperatureType.value == "C") {
+        weatherDayData.day.avgtemp_c
+    } else {
+        weatherDayData.day.avgtemp_f
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
+fun dataFormating(dataString: String): String {
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val date = LocalDate.parse(dataString, formatter)
+    val dayOfWeek = date.dayOfWeek
+    return dayOfWeek.getDisplayName(TextStyle.FULL, Locale("en"))
+}
+
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun WeatherDayItem(forecastDay: ForecastDay) {
+fun WeatherDayItem(forecastDay: ForecastDay, temperatureType: MutableState<String>) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -186,10 +252,12 @@ fun WeatherDayItem(forecastDay: ForecastDay) {
                 style = Typography.bodyLarge,
             )
         }
-        Text(
-            text = "${forecastDay.day.avgtemp_c.toInt()}°C / ${forecastDay.day.avgtemp_f.toInt()}°F",
-            style = Typography.bodyLarge,
-        )
+        Column() {
+            Text(
+                text = "${dataFormating(forecastDay.date)}/${mainTypeTemperature(forecastDay, temperatureType).toInt()}°",
+                style = Typography.bodyLarge,
+            )
+        }
     }
 }
 
@@ -215,7 +283,7 @@ fun ErrorDialog(
 fun MainTopBar(
     location: String,
     showDialog: MutableState<Boolean>,
-    showMenu: MutableState<Boolean>,
+    switcherState: MutableState<Boolean>,
     temperatureType: MutableState<String>
 ) {
     TopAppBar(
@@ -226,7 +294,7 @@ fun MainTopBar(
             titleContentColor = Color.Black
         ),
         title = {
-            MainLoction(location)
+            MainLocation(location)
         },
         navigationIcon = {
             IconButton(onClick = { showDialog.value = true }) {
@@ -235,37 +303,32 @@ fun MainTopBar(
         },
         actions = {
             Box {
-                IconButton(onClick = { showMenu.value = true }) {
-                    Icon(imageVector = Icons.Filled.List, contentDescription = "Menu")
-                }
-                DropdownMenu(
-                    expanded = showMenu.value,
-                    onDismissRequest = { showMenu.value = false },
-                    modifier = Modifier
-                        .background(Color.White, shape = RoundedCornerShape(8.dp))
-                ) {
-                    DropdownMenuItem(
-                        text = { Text("Celsius") },
-                        onClick = {
-                            temperatureType.value = "C"
-                            showMenu.value = false
-                        }
-                    )
-                    DropdownMenuItem(
-                        text = { Text("Fahrenheit") },
-                        onClick = {
-                            temperatureType.value = "F"
-                            showMenu.value = false
-                        }
-                    )
-                }
+                SwitchTemperatureMeasure(temperatureType, switcherState)
             }
         }
     )
 }
 
 @Composable
-fun MainLoction(location: String) {
+fun SwitchTemperatureMeasure(temperatureType: MutableState<String>, switcherState: MutableState<Boolean>) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(end = 16.dp)
+    ) {
+        Switch(
+            checked = switcherState.value,
+            onCheckedChange = {
+                switcherState.value = it
+                temperatureType.value = if (it) "F" else "C"
+            }
+        )
+        Text(text = "C -> F")
+    }
+}
+
+@Composable
+fun MainLocation(location: String) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center

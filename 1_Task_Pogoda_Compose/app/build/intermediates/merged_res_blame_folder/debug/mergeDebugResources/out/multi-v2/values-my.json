@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.a1_task_pogoda_compose.app-mergeDebugResources-50:/values-my/values-my.xml",
+            "outputFile": "com.example.a1_task_pogoda_compose.app-mergeDebugResources-51:/values-my/values-my.xml",
             "map": [
                 {
                     "source": "/home/daniil/.gradle/caches/transforms-3/a44e516c0ae8f175efa65ae19b5199a5/transformed/foundation-release/res/values-my/values-my.xml",
