@@ -20,10 +20,9 @@ class WeatherViewModel() : ViewModel() {
     val backgroundColor: StateFlow<Color> = _backgroundColor
 
     fun updateLocation(newLocation: String, onError: (String) -> Unit) {
-        if (currentLocation != newLocation) {
             fetchWeatherData(newLocation, onError)
             location = newLocation
-        }
+
     }
 
     init {

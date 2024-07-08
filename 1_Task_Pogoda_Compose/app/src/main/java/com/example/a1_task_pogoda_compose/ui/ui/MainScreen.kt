@@ -53,10 +53,12 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.a1_task_pogoda_compose.ui.data.ForecastDay
 import com.example.a1_task_pogoda_compose.ui.theme.Typography
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -163,9 +165,17 @@ fun MainScreen() {
             enter = fadeIn(animationSpec = tween(500)),
             exit = fadeOut(animationSpec = tween(500))
         ) {
-            CircularProgressIndicator(
-                modifier = Modifier.size(50.dp)
-            )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color(0x80000000))
+                    .zIndex(1f),
+                contentAlignment = Alignment.Center
+            ){
+                CircularProgressIndicator(
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
         }
 
         AnimatedVisibility(
@@ -200,16 +210,6 @@ fun MainScreen() {
 
 
 
-
-fun getBackgroundColor(description: String): Color {
-    return when {
-        "rain" in description.lowercase() -> Color.Blue
-        "cloud" in description.lowercase() -> Color.LightGray
-        "sun" in description.lowercase() -> Color.Yellow
-        "snow" in description.lowercase() -> Color.White
-        else -> Color.White
-    }
-}
 
 fun mainTypeTemperature(weatherDayData: ForecastDay, temperatureType: MutableState<String>): Double {
     return if (temperatureType.value == "C") {
