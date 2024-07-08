@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 
 class WeatherViewModel() : ViewModel() {
 
-    private val _weatherData = MutableStateFlow<List<ForecastDay>>(emptyList())
+    private var _weatherData = MutableStateFlow<List<ForecastDay>>(emptyList())
     val weatherData: StateFlow<List<ForecastDay>> = _weatherData
     private var currentLocation = "Moscow"
     var location = currentLocation
@@ -20,6 +20,7 @@ class WeatherViewModel() : ViewModel() {
     val backgroundColor: StateFlow<Color> = _backgroundColor
 
     fun updateLocation(newLocation: String, onError: (String) -> Unit) {
+           _weatherData.value = emptyList()
             fetchWeatherData(newLocation, onError)
             location = newLocation
 

@@ -2,6 +2,7 @@ package com.example.a1_task_pogoda_compose
 
 import WeatherViewModel
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
@@ -65,6 +66,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 import java.util.Locale
 
+
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MainScreen() {
@@ -77,16 +79,13 @@ fun MainScreen() {
     val errorMessage = remember { mutableStateOf("") }
     val isLoading = remember { mutableStateOf(true) }
     val temperatureType = remember { mutableStateOf("C") }
-    val isRefreshing = remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(weatherData) {
         isLoading.value = weatherData.isEmpty()
+        Log.d("isLoading", "$isLoading")
     }
-
-    // Используем remember для сохранения backgroundColor
     val backgroundColor by weatherViewModel.backgroundColor.collectAsState()
-
     val location = weatherViewModel.location
 
     Box(
@@ -98,14 +97,12 @@ fun MainScreen() {
                 detectVerticalDragGestures(
                     onVerticalDrag = { _, _ -> },
                     onDragEnd = {
-                        if (!isRefreshing.value) {
-                            isRefreshing.value = true
+                        if (!isLoading.value) {
                             scope.launch {
                                 weatherViewModel.updateLocation(weatherViewModel.location) { error ->
                                     showError.value = true
                                     errorMessage.value = error
                                 }
-                                isRefreshing.value = false
                             }
                         }
                     }
@@ -120,11 +117,15 @@ fun MainScreen() {
             topBar = { MainTopBar(location, showDialog, switcherState, temperatureType) },
             containerColor = Color.Transparent
         ) { paddingValues ->
-            if (isLoading.value) {
+            if (isLoading.value ) {
                 Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .zIndex(3f),
+                    contentAlignment = Alignment.Center,
+
                 ) {
+                    Log.d("I_load", "Looooooooad")
                     Text(text = "Loading ...")
                 }
             } else {
@@ -157,24 +158,6 @@ fun MainScreen() {
                         }
                     }
                 }
-            }
-        }
-
-        AnimatedVisibility(
-            visible = isRefreshing.value,
-            enter = fadeIn(animationSpec = tween(500)),
-            exit = fadeOut(animationSpec = tween(500))
-        ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0x80000000))
-                    .zIndex(1f),
-                contentAlignment = Alignment.Center
-            ){
-                CircularProgressIndicator(
-                    modifier = Modifier.fillMaxSize()
-                )
             }
         }
 

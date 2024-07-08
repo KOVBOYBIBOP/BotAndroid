@@ -1,4 +1,4 @@
-#Wed Jul 03 13:38:17 MSK 2024
+#Mon Jul 08 23:30:46 MSK 2024
 base.0=/home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/daniil/AndroidStudioProjects/BOTANDROID/BotAndroid/1_Task_Pogoda_Compose/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
