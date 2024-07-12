@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import android.util.Log
 import androidx.compose.ui.graphics.Color
+import com.example.a1_task_pogoda_compose.R
 
 class WeatherViewModel() : ViewModel() {
 
@@ -16,8 +17,8 @@ class WeatherViewModel() : ViewModel() {
     var location = currentLocation
 
 
-    private val _backgroundColor = MutableStateFlow(Color.White)
-    val backgroundColor: StateFlow<Color> = _backgroundColor
+    private val _backgroundColor = MutableStateFlow(R.drawable.ic_snow)
+    val backgroundColor: StateFlow<Int> = _backgroundColor
 
     fun updateLocation(newLocation: String, onError: (String) -> Unit) {
            _weatherData.value = emptyList()
@@ -58,14 +59,14 @@ class WeatherViewModel() : ViewModel() {
         _backgroundColor.value = getBackgroundColor(description)
     }
 
-    private fun getBackgroundColor(description: String): Color {
+    private fun getBackgroundColor(description: String): Int {
         Log.d("BackCheck","ejnfw;")
         return when {
-            "rain" in description.lowercase() -> Color.Blue
-            "cloud" in description.lowercase() -> Color.LightGray
-            "sun" in description.lowercase() -> Color.Yellow
-            "snow" in description.lowercase() -> Color.White
-            else -> Color.White
+            "rain" in description.lowercase() -> R.drawable.ic_rain
+            "cloud" in description.lowercase() -> R.drawable.ic_cloud
+            "sun" in description.lowercase() -> R.drawable.ic_sun
+            "snow" in description.lowercase() -> R.drawable.ic_snow
+            else -> R.drawable.ic_base
         }
     }
 }

@@ -1,71 +1,42 @@
-package com.example.a1_task_pogoda_compose
+package com.example.a1_task_pogoda_compose.ui.ui
 
 import WeatherViewModel
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.*
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.*
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.*
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.style.BaselineShift
-import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.a1_task_pogoda_compose.ui.data.ForecastDay
 import com.example.a1_task_pogoda_compose.ui.theme.Typography
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import java.time.*
+import java.time.format.*
 import java.time.format.TextStyle
-import java.util.Locale
-
+import java.util.*
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -92,7 +63,7 @@ fun MainScreen() {
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .background(backgroundColor)
+            .background(Color.Transparent)
             .pointerInput(Unit) {
                 detectVerticalDragGestures(
                     onVerticalDrag = { _, _ -> },
@@ -110,6 +81,15 @@ fun MainScreen() {
             },
         contentAlignment = Alignment.Center
     ) {
+        Box(modifier = Modifier.fillMaxSize()) {
+            Image(
+                painter = painterResource(id = backgroundColor),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize(),
+
+            )
+        }
         Scaffold(
             modifier = Modifier
                 .fillMaxSize()
@@ -124,7 +104,7 @@ fun MainScreen() {
                         .zIndex(3f),
                     contentAlignment = Alignment.Center,
 
-                ) {
+                    ) {
                     Log.d("I_load", "Looooooooad")
                     Text(text = "Loading ...")
                 }
@@ -147,7 +127,10 @@ fun MainScreen() {
                             .fillMaxWidth()
                             .weight(1f)
                             .padding(horizontal = 16.dp, vertical = 16.dp)
-                            .background(Color.Transparent)
+                            .background(
+                                color = Color.LightGray.copy(alpha = 0.5f),
+                                shape = RoundedCornerShape(16.dp)
+                                )
                     ) {
                         LazyColumn(
                             modifier = Modifier.fillMaxSize()
@@ -190,9 +173,6 @@ fun MainScreen() {
         }
     }
 }
-
-
-
 
 fun mainTypeTemperature(weatherDayData: ForecastDay, temperatureType: MutableState<String>): Double {
     return if (temperatureType.value == "C") {
