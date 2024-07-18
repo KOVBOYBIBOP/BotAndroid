@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: BotAndroid
+created: 2024-07-05T19:38:23+03:00

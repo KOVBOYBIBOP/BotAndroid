@@ -1,3 +1,6 @@
+// StartViewModel.kt
+package com.example.notesroom.model
+
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Animatable
@@ -9,13 +12,8 @@ import com.example.notesroom.model.Todo
 
 @RequiresApi(Build.VERSION_CODES.O)
 class StartViewModel : ViewModel() {
-
-    private var _searchQuery by mutableStateOf("")
-
-
     var taskTitle by mutableStateOf("")
-
-
+    private var _searchQuery by mutableStateOf("")
 
     private val _offsetX = Animatable(0f)
     val offsetX: Float
@@ -26,24 +24,8 @@ class StartViewModel : ViewModel() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun getFakeTodo(): List<Todo> {
-        // Mock data generation
-        return listOf(
-            Todo(1, "First todo", "Home"),
-            Todo(2, "Second todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(4, "Fourth todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-            Todo(3, "Third todo", "Home"),
-
-        ).filter {
-            it.body.contains(_searchQuery, ignoreCase = true)
-        }
+    fun getAllTodo(): List<Todo> {
+        getAllTodo()
     }
 
     fun setSearchQuery(query: String) {

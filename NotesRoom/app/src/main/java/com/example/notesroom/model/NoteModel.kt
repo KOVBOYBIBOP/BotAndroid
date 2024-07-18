@@ -1,10 +1,13 @@
 package com.example.notesroom.model
 
-import java.util.Date
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
 data class Todo(
-    var id: Int,
-    var body: String,
-    var title: String,
+    @PrimaryKey(autoGenerate = true)
+    var id: Int =0,
+    var body : String,
+    var title : String
 )
 

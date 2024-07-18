@@ -87,7 +87,6 @@ fun MainScreen() {
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
-
             )
         }
         Scaffold(

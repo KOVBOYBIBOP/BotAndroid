@@ -1,3 +1,6 @@
+// StartScreen.kt
+package com.example.notesroom
+
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
@@ -32,17 +35,21 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.notesroom.model.Todo
+import com.example.notesroom.model.StartViewModel
+import com.example.notesroom.model.TodoViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun StartScreen(navigateToAddTaskScreen: () -> Unit) {
     val viewModel = viewModel<StartViewModel>()
+    val TodoViewModel = viewModel<TodoViewModel>()
 
     Box(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         contentAlignment = Alignment.TopCenter
     ) {
         Column(
@@ -64,7 +71,7 @@ fun StartScreen(navigateToAddTaskScreen: () -> Unit) {
             )
 
             LazyColumn {
-                itemsIndexed(viewModel.getFakeTodo()) { index: Int, item: Todo ->
+                itemsIndexed(TodoViewModel.getAllTodo()) { index, item ->
                     TodoItem(
                         item = item,
                         onDelete = { viewModel.deleteItem(it) },
@@ -91,6 +98,9 @@ fun StartScreen(navigateToAddTaskScreen: () -> Unit) {
     }
 }
 
+
+
+// TodoItem.kt
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun TodoItem(item: Todo, onDelete: (Todo) -> Unit, onEdit: (Todo) -> Unit, viewModel: StartViewModel) {

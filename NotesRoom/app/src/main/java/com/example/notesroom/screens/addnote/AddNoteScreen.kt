@@ -27,11 +27,10 @@ fun AddTaskScreen(navigateToStartScreen: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Text field for Title
         OutlinedTextField(
             value = viewModel.taskTitle,
             onValueChange = {
-                if (it.length <= 10) { // Limit to 10 characters
+                if (it.length <= 10) {
                     viewModel.taskTitle = it
                 }
             },
@@ -42,7 +41,7 @@ fun AddTaskScreen(navigateToStartScreen: () -> Unit) {
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Text
             ),
-            maxLines = 1 // Allow only 1 line of text
+            maxLines = 1
         )
         OutlinedTextField(
             value = viewModel.taskDescription,
@@ -55,9 +54,11 @@ fun AddTaskScreen(navigateToStartScreen: () -> Unit) {
             maxLines = 10
         )
 
-        // Button to add task
         Button(
-            onClick = { viewModel.saveTask() },
+            onClick = {
+                viewModel.saveTask(viewModel.taskTitle, viewModel.taskDescription)
+                navigateToStartScreen()
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 8.dp)
@@ -65,7 +66,6 @@ fun AddTaskScreen(navigateToStartScreen: () -> Unit) {
             Text("Add")
         }
 
-        // Button to cancel and navigate back
         Button(
             onClick = { navigateToStartScreen() },
             modifier = Modifier
