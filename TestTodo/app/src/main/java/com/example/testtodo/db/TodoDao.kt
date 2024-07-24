@@ -16,9 +16,17 @@ interface TodoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTodo(todo: TodoEntity)
 
-    @Update
-    fun updateTodo(todo: TodoEntity)
-
     @Delete
     suspend fun deleteTodo(todo: TodoEntity)
+
+    @Query("SELECT * FROM Category")
+    fun getAllCategory(): LiveData<List<Category>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCategory(todo: Category)
+
+    @Delete
+    suspend fun deleteCategory(todo: Category)
+
 }
+
