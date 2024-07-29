@@ -1,19 +1,25 @@
+package com.example.testtodo.model
+
 import android.content.Context
 import androidx.room.Room
 import com.example.testtodo.db.TodoDatabase
 
 object DatabaseProvider {
+    @Volatile
+    private var INSTANCE: TodoDatabase? = null
+
     fun getDatabase(context: Context): TodoDatabase {
-        return TodoDatabase.INSTANCE ?: synchronized(this) {
+        return INSTANCE ?: synchronized(this) {
             val instance = Room.databaseBuilder(
                 context.applicationContext,
                 TodoDatabase::class.java,
                 "todo_database"
             )
-                .addMigrations(TodoDatabase.MIGRATION_2_3)
+                .fallbackToDestructiveMigration()
                 .build()
-            TodoDatabase.INSTANCE = instance
+            INSTANCE = instance
             instance
         }
     }
 }
+

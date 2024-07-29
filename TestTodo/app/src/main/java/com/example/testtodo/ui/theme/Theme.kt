@@ -8,6 +8,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -34,18 +35,12 @@ fun TestTODOTheme(
     content: @Composable () -> Unit
 ) {
     val isSystemDarkTheme = isSystemInDarkTheme()
-    val isDarkTheme by remember {
-        themeViewModel.isDarkTheme.apply {
-            if (value == false) {
-                value = isSystemDarkTheme
-            }
-        }
-    }
+    val isDarkTheme by rememberUpdatedState(themeViewModel.isDarkTheme.value)
 
-    val colors = if (isDarkTheme) {
-        DarkColorScheme
-    } else {
-        LightColorScheme
+    val colors = when {
+        isDarkTheme == null -> if (isSystemDarkTheme) DarkColorScheme else LightColorScheme
+        isDarkTheme!! -> DarkColorScheme
+        else -> LightColorScheme
     }
 
     MaterialTheme(
@@ -54,5 +49,6 @@ fun TestTODOTheme(
         content = content
     )
 }
+
 
 

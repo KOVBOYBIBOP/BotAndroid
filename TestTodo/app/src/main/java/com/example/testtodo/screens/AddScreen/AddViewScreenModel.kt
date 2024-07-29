@@ -17,10 +17,12 @@ class AddViewScreenModel : ViewModel() {
     val isCategoryListVisible: MutableState<Boolean> = mutableStateOf(false)
     val filteredCategories: MutableState<List<Category>> = mutableStateOf(emptyList())
     val textFieldPosition = mutableStateOf(Offset.Zero)
+    val selectedCategories: MutableState<List<Category>> = mutableStateOf(emptyList())
 
     fun clearFields() {
         title.value = ""
         description.value = ""
+        selectedCategories.value = emptyList()
     }
 
     fun filterCategories(query: String, categories: List<Category>) {
@@ -37,11 +39,6 @@ class AddViewScreenModel : ViewModel() {
 
     fun hideCategoryList() {
         isCategoryListVisible.value = false
-    }
-
-    fun selectCategory(category: Category) {
-        title.value = category.name
-        hideCategoryList()
     }
 
     fun updateTextFieldPosition(coordinates: LayoutCoordinates) {

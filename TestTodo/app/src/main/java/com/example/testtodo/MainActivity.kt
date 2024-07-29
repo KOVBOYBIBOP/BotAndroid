@@ -6,11 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import androidx.navigation.compose.rememberNavController
+import com.example.testtodo.screens.AddScreen.AddScreen
+import com.example.testtodo.screens.Categories.CategoriesScreen
 import com.example.testtodo.screens.NavHost.Host
+import com.example.testtodo.screens.SettingsScreen.SettingsScreen
 import com.example.testtodo.ui.theme.TestTODOTheme
 import com.example.testtodo.ui.theme.ThemeViewModel
+import java.lang.reflect.Modifier
 
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +22,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TestTODOTheme(themeViewModel) {
+//                AddScreen(
+//                    navigateToAddTaskScreen = { /*TODO*/ },
+//                    itemId = null,
+//                    themeViewModel = themeViewModel
+//                )
+//                CategoriesScreen()
+//                SettingsScreen()
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = androidx.compose.ui.Modifier.fillMaxSize(),
                 ) {
                     Host(themeViewModel = themeViewModel)
                 }

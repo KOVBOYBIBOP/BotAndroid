@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -18,6 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -27,7 +28,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -40,39 +40,32 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.testtodo.R
 import com.example.testtodo.db.Category
 import com.example.testtodo.db.TodoEntity
 import com.example.testtodo.screens.AddScreen.AddViewScreenModel
-import com.example.testtodo.screens.AddScreen.CategoryList
-import com.example.testtodo.screens.AddScreen.TextFields
-import com.example.testtodo.ui.theme.ThemeViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-
 
 
 @Composable
 fun StartScreen(
     navController: NavHostController,
-    themeViewModel: ThemeViewModel
+
 ){
     val addViewModel: AddViewScreenModel = viewModel()
-    val coroutineScope = rememberCoroutineScope()
     val todoViewModel: TodoViewModel = viewModel()
     val allCategories by todoViewModel.allCategories.observeAsState(emptyList())
 
     Box(
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.surface)
 
     ) {
         TodoBlock(
@@ -87,32 +80,30 @@ fun StartScreen(
                 .align(Alignment.BottomCenter)
                 .padding(10.dp),
             navController,
-            themeViewModel
         )
-
-        if (addViewModel.isCategoryListVisible.value) {
-            val textFieldPosition = addViewModel.textFieldPosition.value
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp, horizontal = 10.dp)
-                    .offset(y = textFieldPosition.y.dp + 60.dp) // Position dropdown below the TextField
-                    .align(Alignment.TopStart)
-                    .zIndex(1f) // Ensure this box is on top
-                    .clip(RoundedCornerShape(8.dp))
-            ) {
-                CategoryList(
-                    categories = addViewModel.filteredCategories.value,
-                    onCategorySelected = { category ->
-                        addViewModel.selectCategory(category)
-                    },
-                    onCategoryDeleted = { category ->
-                        addViewModel.deleteCategory(category, coroutineScope, todoViewModel)
-                        addViewModel.filterCategories(addViewModel.title.value, allCategories)
-                    }
-                )
-            }
-        }
+//        if (addViewModel.isCategoryListVisible.value) {
+//            val textFieldPosition = addViewModel.textFieldPosition.value
+//            Box(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(vertical = 8.dp, horizontal = 10.dp)
+//                    .offset(y = textFieldPosition.y.dp + 60.dp) // Position dropdown below the TextField
+//                    .align(Alignment.TopStart)
+//                    .zIndex(1f) // Ensure this box is on top
+//                    .clip(RoundedCornerShape(8.dp))
+//            ) {
+//                CategoryList(
+//                    categories = addViewModel.filteredCategories.value,
+//                    onCategorySelected = { category ->
+//                        addViewModel.selectCategory(category)
+//                    },
+//                    onCategoryDeleted = { category ->
+//                        addViewModel.deleteCategory(category, coroutineScope, todoViewModel)
+//                        addViewModel.filterCategories(addViewModel.title.value, allCategories)
+//                    }
+//                )
+//            }
+//        }
     }
 }
 
@@ -128,14 +119,17 @@ fun TodoBlock(
     val todos by todo.allTodos.observeAsState(emptyList())
 
     Column(
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.surface)
 
     ) {
         SearchBar(
             viewModel = viewModel,
             addViewModel,
             todoViewModel,
-            allCategories
+            allCategories,
+            navController
             )
 
         TodoColumn(
@@ -168,7 +162,7 @@ fun TodoColumn(
         items(todos.filter { todo ->
             todo.title.contains(searchText, ignoreCase = true) ||
                     todo.description.contains(searchText, ignoreCase = true)
-        }, key = { it.id }) { item ->
+        }, key = { it.todoId }) { item ->
             TodoItem(
                 item = item,
                 todoViewModel = todoViewModel,
@@ -201,7 +195,7 @@ fun TodoItem(item: TodoEntity,
         )
     }
 
-    LaunchedEffect(key1 = item.id) {
+    LaunchedEffect(key1 = item.todoId) {
         setOffsetX.value = 0f
     }
 
@@ -234,7 +228,7 @@ fun TodoItem(item: TodoEntity,
             .pointerInput(Unit) {
                 detectTapGestures(
                     onLongPress = {
-                        navController.navigate("addScreen/${item.id}")
+                        navController.navigate("addScreen/${item.todoId}")
                     }
                 )
             }
@@ -258,7 +252,7 @@ fun TodoItem(item: TodoEntity,
 @Composable
 fun ShowAlterDialog(
     onDismiss:()-> Unit,
-    onConfirm:()-> Unit,
+    onConfirm: ()-> Unit,
 ){
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -294,19 +288,28 @@ fun SearchBar(
     viewModel: StartScreenViewModel,
     addViewModel: AddViewScreenModel,
     todoViewModel: TodoViewModel,
-    allCategories: List<Category>) {
+    allCategories: List<Category>,
+    navController: NavHostController) {
     Row(
-        modifier = Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
+        modifier = Modifier
+            .background(MaterialTheme.colorScheme.surface)
         ,
         verticalAlignment = Alignment.CenterVertically
     ) {
-
 
         TextField(
             addViewModel = addViewModel,
             allCategories = allCategories,
             viewModel
         )
+        IconButton(
+            onClick = {navController.navigate("settings") }
+        ) {
+            Icon(
+                imageVector = Icons.Default.Settings,
+                contentDescription = "Settings"
+            )
+        }
     }
 }
 
@@ -320,25 +323,26 @@ fun TextField(
     Column{
         TextField(
             value = addViewModel.title.value,
-            //            value = viewModel.searchTodo.value,
             onValueChange = { newValue ->
                 addViewModel.title.value = newValue
-                addViewModel.showCategoryList()
                 addViewModel.filterCategories(newValue, allCategories)
                 viewModel.searchTodo.value = newValue
             },
             label = { Text(text = "Search") },
             modifier = Modifier
-                .fillMaxWidth()
         )
     }
 }
 
 @Composable
-fun ButtonRow(modifier: Modifier = Modifier, navController: NavHostController, themeViewModel: ThemeViewModel){
+fun ButtonRow(
+    modifier: Modifier = Modifier,
+    navController: NavHostController
+){
     Row(
         modifier = modifier
-            .fillMaxWidth().background(MaterialTheme.colorScheme.surface)
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface)
         ,
         horizontalArrangement = Arrangement.spacedBy(10.dp)
 
@@ -354,21 +358,8 @@ fun ButtonRow(modifier: Modifier = Modifier, navController: NavHostController, t
             ),
             contentPadding = PaddingValues(horizontal = 20.dp, vertical = 10.dp)
         ) {
-            Text(text = "Add Category")
+            Text(text = "Add Todo")
         }
 
-        IconButton(
-            onClick = {
-                themeViewModel.toggleTheme()
-            }
-        ) {
-            Icon(
-                painter = painterResource(
-                    id = if (themeViewModel.isDarkTheme.value) R.drawable.ic_sun else R.drawable.ic_moon
-                ),
-                contentDescription = "Toggle Theme",
-                tint = MaterialTheme.colorScheme.onBackground
-            )
-        }
     }
 }
